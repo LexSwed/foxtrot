@@ -1,0 +1,23 @@
+{
+  "name": "@foxtrot/server",
+  "engines": {
+    "node": ">= 12",
+    "npm": ">= 6.9.0"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src"
+  },
+  "repository": "https://github.com/LexSwed/foxtrot.git",
+  "author": "LexSwed <lexswed@gmail.com>",
+  "dependencies": {
+    "@koa/router": "^8.0.8",
+    "config": "^3.3.0",
+    "koa": "^2.11.0"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.36",
+    "@types/koa": "^2.11.2",
+    "@types/koa__router": "^8.0.2",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
+}

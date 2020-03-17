@@ -1,3 +1,17 @@
 {
-  "name": "foxtrot"
+  "name": "foxtrot",
+  "license": "Mozilla Public License Version 2.0",
+  "scripts": {
+    "lerna:link": "lerna link convert",
+    "postinstall": "node-config-ts"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@foxtrot/client": "file:client",
+    "@foxtrot/server": "file:server",
+    "next": "^9.3.1"
+  }
 }
