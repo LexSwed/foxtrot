@@ -1,9 +1,6 @@
 {
   "name": "@foxtrot/server",
-  "engines": {
-    "node": ">= 12",
-    "npm": ">= 6.9.0"
-  },
+  "version": "0.0.1",
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src"
   },

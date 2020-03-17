@@ -1,5 +1,6 @@
 {
   "name": "@foxtrot/client",
+  "version": "0.0.1",
   "repository": "https://github.com/LexSwed/foxtrot.git",
   "author": "LexSwed <lexswed@gmail.com>",
   "dependencies": {
