@@ -1,6 +1,5 @@
 {
   "exclude": ["node_modules"],
-  "files": [],
   "compilerOptions": {
     "skipLibCheck": false,
     "target": "esnext",
@@ -13,8 +12,6 @@
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "composite": true
-  },
-  "references": [{ "path": "client" }, { "path": "server" }]
+    "baseUrl": "."
+  }
 }
