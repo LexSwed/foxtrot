@@ -1,9 +1,10 @@
 {
   "name": "foxtrot",
   "license": "Mozilla Public License Version 2.0",
+  "repository": "https://github.com/LexSwed/foxtrot.git",
+  "author": "LexSwed <lexswed@gmail.com>",
   "scripts": {
-    "lerna:link": "lerna link convert",
-    "postinstall": "node-config-ts"
+    "lerna:link": "lerna link convert"
   },
   "devDependencies": {
     "lerna": "^3.20.2",

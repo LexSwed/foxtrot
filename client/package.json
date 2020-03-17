@@ -1,5 +1,7 @@
 {
   "name": "@foxtrot/client",
+  "repository": "https://github.com/LexSwed/foxtrot.git",
+  "author": "LexSwed <lexswed@gmail.com>",
   "dependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
