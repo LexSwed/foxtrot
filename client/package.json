@@ -1,14 +1,21 @@
 {
   "name": "@foxtrot/client",
   "version": "0.0.1",
+  "license": "MPL-2.0",
   "repository": "https://github.com/LexSwed/foxtrot.git",
   "author": "LexSwed <lexswed@gmail.com>",
+  "scripts": {
+    "lint": "eslint src/**/* --fix",
+    "format": "prettier --write \"src/**/*.{tsx,jsx,ts,js,gql,graphql,json}\""
+  },
   "dependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5"
+    "@types/react-dom": "^16.9.5",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0"
   }
 }

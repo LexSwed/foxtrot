@@ -1,9 +1,12 @@
-import next from 'next';
 import Router from '@koa/router';
 import config from 'config';
+import next from 'next';
 import path from 'path';
 
-const app = next({ dev: config.get('isDev'), dir: path.join(__dirname, '../../client') });
+const app = next({
+  dev: config.get('isDev'),
+  dir: path.join(__dirname, '../../client')
+});
 const handle = app.getRequestHandler();
 
 async function prepare(router: Router) {

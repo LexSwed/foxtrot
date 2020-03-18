@@ -1,7 +1,8 @@
-import Koa from 'koa';
 import config from 'config';
-import router from './router';
+import Koa from 'koa';
+
 import next from './next';
+import router from './router';
 
 const PORT = config.get('port');
 

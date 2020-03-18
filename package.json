@@ -1,6 +1,7 @@
 {
   "name": "foxtrot",
   "version": "0.0.1",
+  "license": "MPL-2.0",
   "repository": "https://github.com/LexSwed/foxtrot.git",
   "engines": {
     "node": ">= 12",
@@ -9,9 +10,23 @@
   "author": "LexSwed <lexswed@gmail.com>",
   "private": true,
   "scripts": {
-    "start:server": "yarn workspace @foxtrot/server run dev"
+    "start:server": "yarn workspace @foxtrot/server run dev",
+    "lint:client": "yarn workspace @foxtrot/client run lint",
+    "lint:server": "yarn workspace @foxtrot/server run lint",
+    "lint": "yarn run lint:client && yarn run lint:server",
+    "format:client": "yarn workspace @foxtrot/client run format",
+    "format:server": "yarn workspace @foxtrot/server run format",
+    "format:configs": "prettier --write \"{client,server,.}/{.eslintrc,.prettierrc,*.json,*.yml}\"",
+    "format": "yarn run format:client && yarn run format:server && yarn run format:configs"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "prettier": "^1.19.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {

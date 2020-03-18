@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2020": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": false
+    },
+    "project": "tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": 0,
+    "no-undef": 0,
+    "quotes": [
+      1,
+      "single",
+      { "allowTemplateLiterals": true, "avoidEscape": true }
+    ],
+    "semi": [1, "always"],
+    "max-lines": [1, { "max": 200 }],
+    "max-params": [1, { "max": 5 }],
+    "no-unneeded-ternary": [1],
+    // sort-imports
+    "simple-import-sort/sort": 1,
+    "sort-imports": "off",
+    "import/order": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
+  }
+}
