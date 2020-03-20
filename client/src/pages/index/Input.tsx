@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Button from 'lib/Button';
 import styles from './styles.module.css';
 
 function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -15,9 +16,9 @@ const Input = () => {
         type="email"
         placeholder="your-email@mail.com"
       />
-      <button type="submit" className={styles.submitButton}>
+      <Button type="submit" variant="flat" size="l">
         Join
-      </button>
+      </Button>
     </form>
   );
 };

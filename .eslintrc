@@ -70,7 +70,16 @@
       "plugins": ["@typescript-eslint"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-unused-vars": "warn"
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+            "classes": false,
+            "enums": false,
+            "typedefs": false
+          }
+        ]
       }
     }
   ]

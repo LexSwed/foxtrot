@@ -1,5 +1,5 @@
-.link {
-  --color: var(--text-color, #000, inherit);
+.fx-link {
+  --color: var(--text-color, inherit);
   color: var(--color);
   text-decoration: none;
   box-sizing: border-box;
@@ -18,6 +18,6 @@
   }
 }
 
-.linkActive {
+.fx-link--active {
   --color: var(--primary-color);
 }

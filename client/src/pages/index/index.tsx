@@ -4,8 +4,8 @@ import { NextSeo } from 'next-seo';
 
 import Logo from '../../../public/logo-solid.svg';
 
-import shared from 'utils/shared-classnames';
 import Link from 'lib/Link';
+import { shared } from 'lib/styles';
 import Input from './Input';
 import styles from './styles.module.css';
 
