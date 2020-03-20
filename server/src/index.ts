@@ -6,10 +6,14 @@ import router from './router';
 
 const PORT = config.get('port');
 
+const withClient = Boolean(process.env.WITH_CLIENT);
+
 async function init() {
   const server = new Koa();
 
-  await next(router);
+  if (withClient) {
+    await next(router);
+  }
 
   server.use(router.routes());
 

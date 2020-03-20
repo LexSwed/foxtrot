@@ -10,6 +10,8 @@
   "author": "LexSwed <lexswed@gmail.com>",
   "private": true,
   "scripts": {
+    "start": "WITH_CLIENT=1 yarn workspace @foxtrot/server run dev",
+    "start:client": "yarn workspace @foxtrot/client run dev",
     "start:server": "yarn workspace @foxtrot/server run dev",
     "lint:client": "yarn workspace @foxtrot/client run lint",
     "lint:server": "yarn workspace @foxtrot/server run lint",
@@ -17,13 +19,16 @@
     "format:client": "yarn workspace @foxtrot/client run format",
     "format:server": "yarn workspace @foxtrot/server run format",
     "format:configs": "prettier --write \"{client,server,.}/{.eslintrc,.prettierrc,*.json,*.yml}\"",
-    "format": "yarn run format:client && yarn run format:server && yarn run format:configs"
+    "format": "yarn run format:client && yarn run format:server && yarn run format:configs",
+    "add:client": "yarn workspace @foxtrot/client add",
+    "add:sever": "yarn workspace @foxtrot/sever add"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-simple-import-sort": "^5.0.2",
     "prettier": "^1.19.1",

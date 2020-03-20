@@ -5,11 +5,12 @@
     "browser": true,
     "es2020": true
   },
-  "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "parserOptions": {
     "ecmaVersion": 2019,
@@ -19,10 +20,9 @@
     },
     "project": "tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
+  "plugins": ["prettier", "simple-import-sort"],
   "rules": {
-    "prettier/prettier": "error",
-    "no-unused-vars": 0,
+    "no-unused-vars": "warn",
     "no-undef": 0,
     "quotes": [
       1,
@@ -33,10 +33,44 @@
     "max-lines": [1, { "max": 200 }],
     "max-params": [1, { "max": 5 }],
     "no-unneeded-ternary": [1],
-    // sort-imports
-    "simple-import-sort/sort": 1,
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "simple-import-sort/sort": [
+      "error",
+      {
+        "groups": [
+          // Packages. `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Side effect imports.
+          ["^\\u0000"]
+        ]
+      }
+    ],
     "sort-imports": "off",
     "import/order": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
-  }
+    "prettier/prettier": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": { "jsx": true },
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "warn"
+      }
+    }
+  ]
 }
