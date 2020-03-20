@@ -20,7 +20,7 @@ const Seo = (
     openGraph={{
       images: [
         {
-          url: require('../../../public/sorting-thoughts.png'),
+          url: `${require('../../../public/sorting-thoughts.png')}?utm_source=foxtrot`,
           width: 519,
           height: 368,
           alt: 'Background image'
