@@ -8,12 +8,14 @@ const MainApp = ({ Component, pageProps }: any) => {
         {`
           :root {
             --primary-color: #e15756;
+            --text-color: #1a202c;
             --content-width: 1000px;
           }
 
           body {
             margin: 0;
             font-family: 'system-ui', sans-serif;
+            color: var(--text-color);
           }
 
           .flex-center {

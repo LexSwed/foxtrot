@@ -44,7 +44,7 @@ main.main {
   background: url('/sorting-thoughts.svg') no-repeat;
   background-size: contain;
   min-height: 50vh;
-  margin-top: 10vh;
+  margin-top: 5vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;

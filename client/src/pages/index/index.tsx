@@ -3,8 +3,9 @@ import cx from 'classnames';
 import { NextSeo } from 'next-seo';
 
 import Logo from '../../../public/logo-solid.svg';
-import shared from '../../utils/shared-classnames';
 
+import shared from 'utils/shared-classnames';
+import Link from 'lib/Link';
 import Input from './Input';
 import styles from './styles.module.css';
 
@@ -41,6 +42,9 @@ const Index = () => {
             <Logo className={styles.logo} />
             <span className={styles.logoText}>foxtrot</span>
           </div>
+          <nav>
+            <Link href="/">About</Link>
+          </nav>
         </header>
         <main className={cx(shared.contentCenter, styles.main)}>
           <div className={styles.content}>

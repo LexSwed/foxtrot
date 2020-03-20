@@ -36,6 +36,7 @@
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
+    "import/no-unresolved": "off",
     "simple-import-sort/sort": [
       "error",
       {
@@ -45,7 +46,7 @@
           // Parent imports. Put `..` last.
           ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
           // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^utils", "^lib", "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
           // Side effect imports.
           ["^\\u0000"]
         ]
