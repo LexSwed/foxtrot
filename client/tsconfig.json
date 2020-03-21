@@ -1,5 +1,5 @@
 {
-  "include": ["src", "public", "next-env.d.ts"],
+  "include": ["src", "public", "next-env.d.ts", "../config"],
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",

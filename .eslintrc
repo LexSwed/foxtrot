@@ -34,6 +34,7 @@
     "max-params": [1, { "max": 5 }],
     "no-unneeded-ternary": [1],
     "import/first": "error",
+    "import/no-named-as-default": "off",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "import/no-unresolved": "off",

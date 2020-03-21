@@ -18,7 +18,7 @@ async function init() {
   server.use(router.routes());
 
   server.listen(PORT, () => {
-    console.log(`> Ready on http://localhost:${PORT}`);
+    console.log(`⚡️ Ready on http://localhost:${PORT}`);
   });
 }
 

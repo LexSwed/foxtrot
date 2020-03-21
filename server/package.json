@@ -6,7 +6,7 @@
   "author": "LexSwed <lexswed@gmail.com>",
   "scripts": {
     "lint": "eslint src/**/* --fix",
-    "dev": "ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src",
+    "dev": "NODE_CONFIG_DIR=../config ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src",
     "format": "prettier --write \"src/**/*.{ts,js,gql,graphql,json}\""
   },
   "dependencies": {

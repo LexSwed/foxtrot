@@ -10,7 +10,7 @@
   "author": "LexSwed <lexswed@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "WITH_CLIENT=1 yarn workspace @foxtrot/server run dev",
+    "start": "WITH_CLIENT=1 yarn run start:server",
     "start:client": "yarn workspace @foxtrot/client run dev",
     "start:server": "yarn workspace @foxtrot/server run dev",
     "build": "yarn workspace @foxtrot/client run build",
