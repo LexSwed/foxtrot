@@ -70,53 +70,29 @@ main.main {
 }
 
 .form {
+  --br-default: var(--br);
   margin: 16px 0 0;
   padding: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   & > .input,
   & > .submitButton {
-    box-sizing: border-box;
     transition: 0.2s ease-in-out;
-    font-size: 20px;
-    height: 50px;
-    border: 1px solid #cbd5e0;
     &:hover,
     &:focus,
-    &:active {
+    &:focus-within {
       z-index: 5;
-    }
-    &:hover {
-      border-color: #a0aec0;
-    }
-    &:focus {
-      border-color: #4a5568;
-      outline: none;
     }
   }
 }
 
 .input {
+  --border-color: transparent;
+  --br: var(--br-default) 0 0 var(--br-default);
   width: 300px;
-  padding: 0 16px;
-  background-color: #fff;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  &::placeholder {
-    color: #e5e5e5;
-  }
 }
 
 .submitButton {
-  background-color: #ffffff;
-  border-radius: 0 4px 4px 0;
-  padding: 0px 24px;
-  cursor: pointer;
+  --br: 0 var(--br-default) var(--br-default) 0;
   margin-left: -1px;
-  &:hover {
-    background-color: #edf2f7;
-  }
-  &:active {
-    background-color: #f7fafc;
-  }
 }

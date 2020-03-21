@@ -26,8 +26,8 @@
   font-size: 18px;
   --font-size: 18px;
   & > .fx-textfield-wrapper {
-    height: 50px;
-    padding: 0 20px;
+    height: 40px;
+    padding: 0 12px;
   }
 }
 
@@ -40,6 +40,7 @@
   border: 1px solid var(--border-color);
   box-sizing: border-box;
   border-radius: var(--br);
+  width: 100%;
   &:hover {
     --bg-color: #fff;
     --border-color: var(--border-color-hover);

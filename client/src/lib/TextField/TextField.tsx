@@ -5,6 +5,7 @@ import cx from 'classnames';
 import Label from 'lib/Label';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type WrapperProps = React.HTMLAttributes<HTMLDivElement>;
 
 type Props = {
   label?: string;
@@ -19,7 +20,7 @@ type Props = {
   inputProps?: InputProps & {
     ref?: React.MutableRefObject<HTMLInputElement>;
   };
-};
+} & WrapperProps;
 
 const TextField = React.forwardRef<HTMLDivElement, Props>(
   (
@@ -33,8 +34,9 @@ const TextField = React.forwardRef<HTMLDivElement, Props>(
       name,
       message,
       size,
-      inputProps = {},
       children,
+      className,
+      inputProps = {},
       ...props
     },
     ref
@@ -54,7 +56,11 @@ const TextField = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <div
-        className={cx('fx-textfield', { [`fx--textfield--${size}`]: true })}
+        className={cx(
+          'fx-textfield',
+          { [`fx--textfield--${size}`]: true },
+          className
+        )}
         {...props}
         ref={ref}
       >
@@ -63,7 +69,7 @@ const TextField = React.forwardRef<HTMLDivElement, Props>(
             {label}
           </Label>
         )}
-        <div className={cx('fx-textfield-wrapper')}>
+        <label className={cx('fx-textfield-wrapper')}>
           <input
             value={value}
             onChange={onChange}
@@ -76,7 +82,7 @@ const TextField = React.forwardRef<HTMLDivElement, Props>(
             {...inputProps}
           />
           {children}
-        </div>
+        </label>
         {message && (
           <div className={cx('fx-textfield-message')} id={messageId}></div>
         )}

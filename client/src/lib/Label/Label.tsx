@@ -6,9 +6,9 @@ type Props = React.DetailedHTMLProps<
 >;
 
 const Label = React.forwardRef<HTMLLabelElement, Props>(
-  ({ children, ...props }) => {
+  ({ children, ...props }, ref) => {
     return (
-      <label className="fx-label" {...props}>
+      <label className="fx-label" {...props} ref={ref}>
         {children}
       </label>
     );

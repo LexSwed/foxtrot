@@ -107,6 +107,7 @@
 .fx-button--primary,
 .fx-button--warning,
 .fx-button--error {
+  --text-color: #fff;
   --border-color: transparent;
   &:disabled {
     color: var(--color-gray-200);

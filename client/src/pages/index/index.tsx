@@ -6,8 +6,7 @@ import Logo from '../../../public/logo-solid.svg';
 
 import Link from 'lib/Link';
 import { shared } from 'lib/styles';
-import TextField from 'lib/TextField';
-// import Input from './Input';
+import Input from './Input';
 import styles from './styles.module.css';
 
 const Seo = (
@@ -53,11 +52,7 @@ const Index = () => {
               Your routine can get more <strong>insightful</strong> and your
               stand ups <strong> efficient</strong>
             </p>
-            <TextField />
-            <TextField placeholder="With placeholder" />
-            <TextField label="Here is the label" size="s" />
-            <TextField label="Here is the label" />
-            <TextField label="Here is the label" size="l" />
+            <Input />
           </div>
         </main>
       </div>
