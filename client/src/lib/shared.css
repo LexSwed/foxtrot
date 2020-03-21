@@ -13,6 +13,9 @@
   --content-width: 1000px;
   --br: 2px;
   --text-color: var(--color-gray-900);
+  --border-color: var(--color-gray-400);
+  --border-color-hover: var(--color-gray-600);
+  --border-color-focus: var(--color-gray-800);
 }
 
 body {
