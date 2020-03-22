@@ -5,8 +5,9 @@
   "repository": "https://github.com/LexSwed/foxtrot.git",
   "author": "LexSwed <lexswed@gmail.com>",
   "scripts": {
+    "build": "echo \"NO BUILD YET\"",
     "lint": "eslint src/**/* --fix",
-    "dev": "NODE_CONFIG_DIR=../config ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src",
+    "dev": "ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src",
     "format": "prettier --write \"src/**/*.{ts,js,gql,graphql,json}\""
   },
   "dependencies": {

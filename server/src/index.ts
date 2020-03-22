@@ -5,8 +5,7 @@ import next from './next';
 import router from './router';
 
 const PORT = config.get('port');
-
-const withClient = Boolean(process.env.WITH_CLIENT);
+const withClient = config.get('withClient');
 
 async function init() {
   const server = new Koa();
