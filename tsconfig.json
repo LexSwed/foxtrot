@@ -4,7 +4,7 @@
     "skipLibCheck": false,
     "target": "esnext",
     "module": "commonjs",
-    "lib": ["dom", "esnext"],
+    "lib": ["esnext"],
     "rootDir": ".",
     "downlevelIteration": true,
     "strict": true,

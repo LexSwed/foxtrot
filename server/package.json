@@ -8,10 +8,14 @@
     "build": "echo \"NO BUILD YET\"",
     "lint": "eslint src/**/* --fix",
     "dev": "ts-node-dev --no-notify --respawn --ignore-watch client --transpileOnly --watch server/src ./src",
-    "format": "prettier --write \"src/**/*.{ts,js,gql,graphql,json}\""
+    "format": "prettier --write \"src/**/*.{ts,js,gql,graphql,json}\"",
+    "prisma:migrate": "prisma2 migrate up --experimental",
+    "prisma:generate": "prisma2 generate",
+    "prisma": "yarn prisma:generate && yarn prisma:migrate"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
+    "@prisma/client": "^2.0.0-preview024",
     "config": "^3.3.0",
     "koa": "^2.11.0"
   },
@@ -19,6 +23,7 @@
     "@types/config": "0.0.36",
     "@types/koa": "^2.11.2",
     "@types/koa__router": "^8.0.2",
+    "prisma2": "^2.0.0-preview024",
     "ts-node-dev": "^1.0.0-pre.44"
   }
 }

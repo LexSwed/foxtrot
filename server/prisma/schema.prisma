@@ -1,0 +1,41 @@
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Token {
+    ip String
+    token String @unique
+    createdAt DateTime @default(now())
+    expirationDate DateTime
+    isActive Boolean
+}
+
+model Organization {
+  id    String  @id @default(cuid())
+  name    String
+}
+
+
+model User {
+  id    String  @id @default(cuid())
+  email      String  @unique
+  firstName  String?
+  lastName   String?
+  orgs Organization[]
+}
+
+model Team {
+  id    String  @id @default(cuid())
+  name String
+  members Profile[]
+}
+
+model Profile {
+  id Int @id @default(autoincrement())
+  user User
+}

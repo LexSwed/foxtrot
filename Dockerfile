@@ -8,4 +8,3 @@ ADD . /app/
 
 WORKDIR /app
 
-CMD yarn start
