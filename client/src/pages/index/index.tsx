@@ -13,7 +13,7 @@ const Index: React.FC<Props> = ({ isAuthorized }) => {
   return isAuthorized ? <App /> : <About />;
 };
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       isAuthorized: isAuthorized(ctx)
