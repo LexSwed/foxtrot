@@ -21,8 +21,6 @@
     "format:server": "yarn workspace @foxtrot/server run format",
     "format:configs": "prettier --write \"{client,server,.}/{.eslintrc,.prettierrc,*.json,*.yml}\"",
     "format": "yarn run format:client && yarn run format:server && yarn run format:configs",
-    "add:client": "yarn workspace @foxtrot/client add",
-    "add:server": "yarn workspace @foxtrot/server add",
     "prepare:server": "yarn workspace @foxtrot/server run prisma"
   },
   "devDependencies": {
