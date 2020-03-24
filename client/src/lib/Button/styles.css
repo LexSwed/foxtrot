@@ -64,17 +64,17 @@
 .fx-button--flat,
 .fx-button--transparent {
   &:disabled {
-    color: var(--color-gray-600);
+    color: var(--gray-600);
   }
 }
 
 .fx-button--default {
   --bg-color: #fff;
   &:hover {
-    --bg-color: var(--color-gray-200);
+    --bg-color: var(--gray-200);
   }
   &:active {
-    --bg-color: var(--color-gray-300);
+    --bg-color: var(--gray-300);
   }
   &:active,
   &:hover {
@@ -84,12 +84,12 @@
 
 .fx-button--flat {
   --border-color: transparent;
-  --bg-color: var(--color-gray-200);
+  --bg-color: var(--gray-200);
   &:hover {
-    --bg-color: var(--color-gray-300);
+    --bg-color: var(--gray-300);
   }
   &:active {
-    --bg-color: var(--color-gray-200);
+    --bg-color: var(--gray-200);
   }
 }
 
@@ -97,10 +97,10 @@
   --border-color: transparent;
   --bg-color: transparent;
   &:hover {
-    --bg-color: var(--color-gray-200);
+    --bg-color: var(--gray-200);
   }
   &:active {
-    --bg-color: var(--color-gray-100);
+    --bg-color: var(--gray-100);
   }
 }
 
@@ -110,36 +110,36 @@
   --text-color: #fff;
   --border-color: transparent;
   &:disabled {
-    color: var(--color-gray-200);
+    color: var(--gray-200);
   }
 }
 
 .fx-button--primary {
-  --bg-color: var(--color-primary-600);
+  --bg-color: var(--brand-600);
   &:hover {
-    --bg-color: var(--color-primary-700);
+    --bg-color: var(--brand-700);
   }
   &:active {
-    --bg-color: var(--color-primary-600);
+    --bg-color: var(--brand-600);
   }
 }
 
 .fx-button--warning {
-  --bg-color: var(--color-warning-600);
+  --bg-color: var(--warning-600);
   &:hover {
-    --bg-color: var(--color-warning-700);
+    --bg-color: var(--warning-700);
   }
   &:active {
-    --bg-color: var(--color-warning-600);
+    --bg-color: var(--warning-600);
   }
 }
 
 .fx-button--error {
-  --bg-color: var(--color-error-600);
+  --bg-color: var(--error-600);
   &:hover {
-    --bg-color: var(--color-error-700);
+    --bg-color: var(--error-700);
   }
   &:active {
-    --bg-color: var(--color-error-600);
+    --bg-color: var(--error-600);
   }
 }

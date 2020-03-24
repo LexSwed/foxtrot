@@ -19,5 +19,5 @@
 }
 
 .fx-link--active {
-  --color: var(--primary-color);
+  --color: var(--brand-color);
 }

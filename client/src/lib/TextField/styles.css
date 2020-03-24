@@ -49,7 +49,7 @@
     --border-color: var(--border-color-focus);
   }
   &:disabled {
-    --bg-color: var(--color-gray-100);
+    --bg-color: var(--gray-100);
     --border-color: transparent;
     pointer-events: none;
   }
@@ -79,7 +79,7 @@
     display: none;
   }
   &::placeholder {
-    color: var(--color-gray-500);
+    color: var(--gray-500);
   }
   &[readonly] {
     text-overflow: ellipsis;

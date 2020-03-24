@@ -56,11 +56,7 @@ const TextField = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <div
-        className={cx(
-          'fx-textfield',
-          { [`fx--textfield--${size}`]: true },
-          className
-        )}
+        className={cx('fx-textfield', `fx--textfield--${size}`, className)}
         {...props}
         ref={ref}
       >

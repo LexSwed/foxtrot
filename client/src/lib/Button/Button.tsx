@@ -8,11 +8,9 @@ type Props = ButtonProps | AnchorProps;
 const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Props>(
   ({ children, className, size, variant, ...props }, ref) => {
     const classes = cx(
-      {
-        'fx-button': true,
-        [`fx-button--${size}`]: true,
-        [`fx-button--${variant}`]: true
-      },
+      'fx-button',
+      `fx-button--${size}`,
+      `fx-button--${variant}`,
       className
     );
 

@@ -9,7 +9,7 @@ function onSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
   // send signup request
   // go to the app
-  Router.push('/');
+  Router.push('/signup');
 }
 
 const Input = () => {
