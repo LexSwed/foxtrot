@@ -3,14 +3,15 @@ version: '3.7'
 services:
   app:
     env_file: .env.dev
-    command: npx npm-run-all prepare:server start
+    command: npx npm-run-all prepare:server dev
     # restart: always
     build: .
     environment:
+      NODE_CONFIG_DIR: /app/config # root, see Dockerfile
       NODE_ENV: development
-      PORT: 4000
+      PORT: 3000
     ports:
-      - '4000:4000'
+      - '3000:3000'
     volumes:
       - .:/app:delegated
     depends_on:

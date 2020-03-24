@@ -1,5 +1,5 @@
 export default {
-  port: parseInt(process.env.PORT || '4000', 10),
+  port: parseInt(process.env.PORT || '3000', 10),
   isDev: true,
   isProd: false,
   withClient: process.argv.slice(2).includes('--with-client'),

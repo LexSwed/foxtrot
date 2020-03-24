@@ -10,9 +10,8 @@
   "author": "LexSwed <lexswed@gmail.com>",
   "private": true,
   "scripts": {
-    "start": "yarn run start:server --with-client",
-    "start:client": "yarn workspace @foxtrot/client run dev",
-    "start:server": "yarn workspace @foxtrot/server run dev",
+    "start": "docker-compose up",
+    "dev": "yarn workspace @foxtrot/server run dev --with-client",
     "build": "yarn workspace @foxtrot/client run build",
     "lint:client": "yarn workspace @foxtrot/client run lint",
     "lint:server": "yarn workspace @foxtrot/server run lint",
