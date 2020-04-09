@@ -1,15 +1,14 @@
 import React from 'react';
+import { Edge } from '@fxtrot/edge';
 
-import '../lib/shared.css';
-import '../lib/Button/styles.css';
-import '../lib/Card/styles.css';
-import '../lib/Heading/styles.css';
-import '../lib/Label/styles.css';
-import '../lib/Link/styles.css';
-import '../lib/TextField/styles.css';
+import '@fxtrot/edge/dist/style.css';
 
 const MainApp = ({ Component, pageProps }: any) => {
-  return <Component {...pageProps} />;
+  return (
+    <Edge>
+      <Component {...pageProps} />
+    </Edge>
+  );
 };
 
 export default MainApp;

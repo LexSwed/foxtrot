@@ -1,8 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
+import { Button } from '@fxtrot/edge';
 
-import Button from 'lib/Button';
-import TextField from 'lib/TextField';
 import styles from './styles.module.css';
 
 function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -15,16 +14,15 @@ function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 const Input = () => {
   return (
     <form onSubmit={onSubmit} className={styles.form}>
-      <TextField
+      <input
         name="email"
         type="email"
         placeholder="your-email@mail.com"
-        size="l"
         className={styles.input}
       />
       <Button
         type="submit"
-        variant="primary"
+        tone="accent"
         className={styles.submitButton}
         size="l"
       >

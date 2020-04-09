@@ -1,13 +1,10 @@
 import React from 'react';
-import cx from 'classnames';
+import { ContentBlock } from '@fxtrot/edge';
 import { NextSeo } from 'next-seo';
 
-import Logo from '../../../../public/logo-solid.svg';
-
-import Link from 'lib/Link';
-import { shared } from 'lib/styles';
-import Input from './Input';
 import styles from './styles.module.css';
+import Header from './Header';
+import Input from './Input';
 
 const Seo = (
   <NextSeo
@@ -35,26 +32,20 @@ const Index = () => {
   return (
     <>
       <div className={styles.root}>
-        <header
-          className={cx(shared.flexCenter, shared.contentCenter, styles.header)}
-        >
-          <div className={shared.flexCenter}>
-            <Logo className={styles.logo} />
-            <span className={styles.logoText}>foxtrot</span>
-          </div>
-          <nav>
-            <Link href="/">About</Link>
-          </nav>
-        </header>
-        <main className={cx(shared.contentCenter, styles.main)}>
-          <div className={styles.content}>
-            <p className={styles.text}>
-              Your routine can get more <strong>insightful</strong> and your
-              stand ups <strong> efficient</strong>
-            </p>
-            <Input />
-          </div>
-        </main>
+        <ContentBlock wide>
+          <Header />
+        </ContentBlock>
+        <ContentBlock wide>
+          <main className={styles.main}>
+            <div className={styles.content}>
+              <p className={styles.text}>
+                Your routine can get more <strong>insightful</strong> and your
+                stand ups <strong> efficient</strong>
+              </p>
+              <Input />
+            </div>
+          </main>
+        </ContentBlock>
       </div>
       {Seo}
     </>

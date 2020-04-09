@@ -1,36 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600');
 
 .root {
-  --color-lite: rgba(225, 86, 86, 0.01);
-  --color-stronger: rgba(225, 86, 86, 0.15);
   width: 100vw;
   min-height: 100vh;
   font-family: 'Baloo Chettan 2', 'system-ui', sans-serif;
   font-weight: 400;
-  color: rgb(26, 32, 44);
-  background: linear-gradient(
-    to bottom,
-    var(--color-lite) 40%,
-    var(--color-stronger)
-  );
   font-size: 14px;
   line-height: 1.2;
-}
-
-.header {
-  justify-content: space-between;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 8px 24px;
+  --brand-100: #f0abab;
+  --brand-200: #ed9a9a;
+  --brand-300: #ea8989;
+  --brand-400: #e77978;
+  --brand-500: #e46867;
+  --brand-600: #e15756;
+  --brand-700: #cb4e4d;
+  --brand-800: #b44645;
+  --brand-900: #9e3d3c;
+  --brand-color: var(--brand-600);
 }
 
 .navLink {
   color: inherit;
 }
+.fx-link {
+  --color: var(--text-color, inherit);
+  color: var(--color);
+  text-decoration: none;
+  box-sizing: border-box;
+  &:after {
+    content: '';
+    display: block;
+    bottom: -1px;
+    width: 90%;
+    margin: 0 auto;
+    height: 2px;
+    background-color: var(--color);
+    transition: transform 0.12s ease-in-out;
+  }
+  &:hover:after {
+    transform: translateY(-1px);
+  }
+}
+
+.fx-link--active {
+  --color: var(--brand-color);
+}
 
 .logo {
   height: 60px;
   margin-right: 16px;
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
 }
 
 .logoText {
@@ -40,7 +59,7 @@
   color: #000;
 }
 
-main.main {
+.main {
   background: url('/sorting-thoughts.svg') no-repeat;
   background-size: contain;
   min-height: 50vh;
@@ -55,8 +74,8 @@ main.main {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
-  width: 60%;
-  padding-bottom: 64px;
+  width: 570px;
+  padding-bottom: 10vh;
 }
 
 .text {
@@ -89,7 +108,10 @@ main.main {
 .input {
   --border-color: transparent;
   --br: var(--br-default) 0 0 var(--br-default);
+  all: unset;
+  padding: 8px 16px;
   width: 300px;
+  height: 100%;
 }
 
 .submitButton {

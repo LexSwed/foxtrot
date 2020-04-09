@@ -3,6 +3,8 @@ import cx from 'classnames';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
+import styles from './styles.module.css';
+
 type Props = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   className?: string;
@@ -16,8 +18,8 @@ const Link = React.forwardRef<HTMLAnchorElement, Props>(
       <NextLink href={href}>
         <a
           className={cx(
-            'fx-link',
-            router.pathname === href && 'fx-link--active',
+            styles.link,
+            router.pathname === href && styles.linkActive,
             className
           )}
           {...props}

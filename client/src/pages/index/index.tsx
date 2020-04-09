@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 
-import { isAuthorized } from 'utils/auth';
+// import { isAuthorized } from 'utils/auth';
 import About from './about';
 import App from './app';
 
@@ -13,10 +13,10 @@ const Index: React.FC<Props> = ({ isAuthorized }) => {
   return isAuthorized ? <App /> : <About />;
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     props: {
-      isAuthorized: isAuthorized(ctx)
+      // isAuthorized: isAuthorized(ctx)
     }
   };
 };

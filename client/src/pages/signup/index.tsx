@@ -1,8 +1,7 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
+import { Heading, Card } from '@fxtrot/edge';
 
-import Card from 'lib/Card';
-import Heading from 'lib/Heading';
 import styles from './styles.module.css';
 
 const Seo = <NextSeo title="Foxtrot - Sign Up" />;

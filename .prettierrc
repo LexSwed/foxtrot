@@ -12,7 +12,7 @@
       }
     },
     {
-      "files": ".prettierrc",
+      "files": ".(*)rc",
       "options": { "parser": "json" }
     }
   ]
