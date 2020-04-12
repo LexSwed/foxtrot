@@ -946,10 +946,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@fxtrot/edge@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@fxtrot/edge/-/edge-1.0.7.tgz#5b6ebacc7a80e70e9afcba5d151935e3e8a30beb"
-  integrity sha512-AUdCNyEUmGyfG7/eZAXcMXblZA/+ky2DPYpvQnWm2xph1muZCawvAMCYHWT3ieq2MxmkQoGIZ6YaVxyvw+KrHw==
+"@fxtrot/edge@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@fxtrot/edge/-/edge-1.0.9.tgz#3fe1b6ea3b4bf3092f174e4d97f8b650e49ce29c"
+  integrity sha512-+/izAoN2H4osSbRnhweEaaa0771tMMIbfax4cjdw5fKI2Mel2J8DrHnrR29mN8AZYCM0Jd+9LMFqFnHBQuK6lw==
   dependencies:
     "@popperjs/core" "^2.2.1"
     "@reach/auto-id" "^0.10.0"
@@ -6504,11 +6504,6 @@ react-is@^16.8.1, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-uid@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-uid/-/react-uid-2.2.0.tgz#0f77e1e0594fbf29fc4fe528cc9aa415c5bf9159"
-  integrity sha512-z+g5+hFOQ08hCfrGcJ1PNs+cmvH8Uq2CVzCmPeWBsUi5A4W4NWXR5jouledzy3oSKGMU9HOzf8zFuGi15TXJoQ==
 
 react@^16.13.0:
   version "16.13.1"

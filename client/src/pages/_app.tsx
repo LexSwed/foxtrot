@@ -5,9 +5,11 @@ import '@fxtrot/edge/dist/style.css';
 
 const MainApp = ({ Component, pageProps }: any) => {
   return (
-    <Edge>
-      <Component {...pageProps} />
-    </Edge>
+    <>
+      <Edge>
+        <Component {...pageProps} />
+      </Edge>
+    </>
   );
 };
 

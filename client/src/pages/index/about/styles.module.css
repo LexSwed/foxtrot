@@ -3,10 +3,10 @@
 .root {
   width: 100vw;
   min-height: 100vh;
-  font-family: 'Baloo Chettan 2', 'system-ui', sans-serif;
   font-weight: 400;
-  font-size: 14px;
   line-height: 1.2;
+  --text-size: 14px;
+  --font-family: 'Baloo Chettan 2', 'system-ui', sans-serif;
   --brand-100: #f0abab;
   --brand-200: #ed9a9a;
   --brand-300: #ea8989;
@@ -22,29 +22,6 @@
 .navLink {
   color: inherit;
 }
-.fx-link {
-  --color: var(--text-color, inherit);
-  color: var(--color);
-  text-decoration: none;
-  box-sizing: border-box;
-  &:after {
-    content: '';
-    display: block;
-    bottom: -1px;
-    width: 90%;
-    margin: 0 auto;
-    height: 2px;
-    background-color: var(--color);
-    transition: transform 0.12s ease-in-out;
-  }
-  &:hover:after {
-    transform: translateY(-1px);
-  }
-}
-
-.fx-link--active {
-  --color: var(--brand-color);
-}
 
 .logo {
   height: 60px;
@@ -57,6 +34,7 @@
   line-height: 1;
   font-weight: 600;
   color: #000;
+  color: var(--text-color);
 }
 
 .main {

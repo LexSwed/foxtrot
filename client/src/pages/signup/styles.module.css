@@ -14,7 +14,22 @@
 }
 
 .heading {
-  font-size: 24px;
-  line-height: 1;
   font-family: 'Baloo Chettan 2', 'system-ui', sans-serif;
+  text-align: center;
+}
+
+.imageBox {
+  text-align: center;
+  & img {
+    width: 140px;
+  }
+}
+
+div.pinInput {
+  width: 40px;
+  height: 72px;
+  font-size: 50px;
+  text-align: center;
+  padding: 0;
+  --text-color: var(--gray-600);
 }
