@@ -6,8 +6,8 @@ import styles from './styles.module.css';
 
 function onSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
-  // send signup request
-  // go to the app
+  const email = (e.currentTarget.elements[0] as HTMLInputElement)?.value;
+  document.cookie = `email=${email}`;
   Router.push('/signup');
 }
 

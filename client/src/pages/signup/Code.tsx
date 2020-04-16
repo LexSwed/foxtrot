@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Inline, TextField } from '@fxtrot/edge';
+import React, { useState, useCallback } from 'react';
+import { Inline, TextField, Button, Stack } from '@fxtrot/edge';
 
 import styles from './styles.module.css';
 
@@ -10,63 +10,106 @@ const inputRefs = [
   React.createRef<HTMLInputElement>()
 ];
 
+const onChange = () => {};
+
 const Code: React.FC = () => {
-  const [pin, setPin] = useState(['', '', '', '']);
+  const [pin, setPin] = useState(['0', '0', '0', '0']);
+
+  const onKeyDown = useCallback(
+    (ev: React.KeyboardEvent<HTMLFormElement>) => {
+      const { keyCode } = ev;
+      const { name } = ev.target as HTMLInputElement;
+
+      if (!name) {
+        return;
+      }
+
+      const i = Number(name);
+
+      if (keyCode === 8) {
+        // backspace
+        setPin((pin) => [...pin.slice(0, i), '', ...pin.slice(i + 1)]);
+        return;
+      } else if (keyCode === 13) {
+        // submit
+        return;
+      } else if (keyCode === 9) {
+        // tab
+        return;
+      }
+
+      const key = String.fromCharCode(ev.which);
+
+      if (Number.isInteger(Number(key))) {
+        setPin((pin) => [...pin.slice(0, i), key, ...pin.slice(i + 1)]);
+      } else {
+        return;
+      }
+
+      if (inputRefs[i + 1]) {
+        inputRefs[i + 1].current?.focus();
+      }
+    },
+    [setPin, inputRefs]
+  );
+
+  const onFocus = useCallback(
+    (ev: React.FocusEvent<HTMLFormElement>) => {
+      const { name } = ev.target;
+
+      if (!name) {
+        return;
+      }
+
+      const i = Number(name);
+
+      setTimeout(() => {
+        inputRefs[i].current?.select();
+      }, 0);
+    },
+    [inputRefs]
+  );
+
+  const onPaste = useCallback(
+    (ev: React.ClipboardEvent<HTMLFormElement>) => {
+      const text = ev.clipboardData.getData('text');
+      if (text.length) {
+        setPin(text.split('').slice(0, 4));
+      }
+    },
+    [setPin]
+  );
 
   return (
     <form
-      onPaste={(ev) => {
-        const text = ev.clipboardData.getData('text');
-        if (text.length) {
-          setPin(text.split('').slice(0, 4));
-        }
+      onSubmit={(ev) => {
+        ev.preventDefault();
+        console.log(pin.join(''));
       }}
+      onKeyDown={onKeyDown}
+      onPaste={onPaste}
+      onFocus={onFocus}
     >
-      <Inline nowrap>
-        {pin.map((s, i) => {
-          return (
-            <TextField
-              size="l"
-              key={i}
-              inputRef={inputRefs[i]}
-              value={s}
-              onFocus={() => {
-                inputRefs[i].current?.select();
-              }}
-              onKeyDown={(ev) => {
-                const { keyCode } = ev;
-
-                if (keyCode === 8) {
-                  // backspace
-                  pin[i] = '';
-                  setPin([...pin]);
-                  return;
-                } else if (keyCode === 13) {
-                  // submit
-                  return;
-                } else if (keyCode === 9) {
-                  // tab
-                  return;
-                }
-
-                const key = String.fromCharCode(ev.which);
-
-                if (Number.isInteger(Number(key))) {
-                  pin[i] = key;
-                  setPin([...pin]);
-                } else {
-                  return;
-                }
-
-                if (inputRefs[i + 1]) {
-                  inputRefs[i + 1].current?.focus();
-                }
-              }}
-              className={styles.pinInput}
-            />
-          );
-        })}
-      </Inline>
+      <Stack align="center">
+        <Inline space="m" nowrap>
+          {pin.map((s, i) => {
+            return (
+              <TextField
+                size="l"
+                name={`${i}`}
+                key={i}
+                inputRef={inputRefs[i]}
+                value={s}
+                onChange={onChange}
+                className={styles.pinInput}
+              />
+            );
+          })}
+        </Inline>
+        <Button type="submit" size="l" tone="accent">
+          Submit
+        </Button>
+      </Stack>
     </form>
   );
 };

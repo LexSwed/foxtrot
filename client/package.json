@@ -11,9 +11,9 @@
     "format": "prettier --write \"src/**/*.{tsx,jsx,ts,js,gql,graphql,json}\""
   },
   "dependencies": {
-    "@fxtrot/edge": "^1.0.9",
+    "@fxtrot/edge": "^1.0.15",
     "classnames": "^2.2.6",
-    "next": "^9.3.1",
+    "next": "file:../node_modules/next/",
     "next-cookie": "^2.2.1",
     "next-seo": "^4.4.0",
     "react": "^16.13.0",
