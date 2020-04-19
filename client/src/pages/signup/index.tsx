@@ -1,29 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import { Cookie } from 'next-cookie';
 
 import styles from './styles.module.css';
-import EnterCode from './EnterCode';
+import ConfirmationCard from './ConfirmationCard';
 import Loading from './Loading';
+import EmailCard from './EmailCard';
 
 const Seo = <NextSeo title="Foxtrot - Sign Up" />;
 
 const SignUp: React.FC<{ email: string }> = ({ email }) => {
-  const [isSent, setSignUpRequestSent] = useState(false);
+  const [state, dispatch] = useReducer(signupReducer, {
+    isLoading: false,
+    email
+  });
 
   useEffect(() => {
-    if (email) {
-      setTimeout(() => {
-        setSignUpRequestSent(true);
+    if (state.email) {
+      dispatch({ type: 'setLoading', payload: true });
+      const id = setTimeout(() => {
+        dispatch({ type: 'setLoading', payload: false });
       }, 500);
+
+      return () => clearTimeout(id);
     }
-  }, [email]);
+  }, [state.email]);
 
   return (
     <>
       <div className={styles.layout}>
-        {isSent ? <EnterCode /> : <Loading />}
+        {state.email ? (
+          state.isLoading ? (
+            <Loading />
+          ) : (
+            <ConfirmationCard />
+          )
+        ) : (
+          <EmailCard
+            onSubmit={(email) => dispatch({ type: 'setEmail', payload: email })}
+          />
+        )}
       </div>
       {Seo}
     </>
@@ -44,3 +61,20 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 export default SignUp;
+
+function signupReducer(state: State, action: Action): State {
+  switch (action.type) {
+    case 'setEmail':
+      return { ...state, email: action.payload };
+    case 'setLoading':
+      return {
+        ...state,
+        isLoading: action.payload
+      };
+  }
+}
+
+type State = { isLoading: boolean; email: string | null };
+type Action =
+  | { type: 'setEmail'; payload: string }
+  | { type: 'setLoading'; payload: boolean };

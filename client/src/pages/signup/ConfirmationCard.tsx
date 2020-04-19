@@ -4,7 +4,7 @@ import { Heading, Box, Stack, Text, Card } from '@fxtrot/edge';
 import styles from './styles.module.css';
 import Code from './Code';
 
-const EnterCode: React.FC = () => {
+const ConfirmationCard: React.FC = () => {
   return (
     <Card p="xl" className={styles.card}>
       <Stack>
@@ -26,4 +26,4 @@ const EnterCode: React.FC = () => {
   );
 };
 
-export default EnterCode;
+export default ConfirmationCard;

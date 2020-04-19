@@ -3,8 +3,9 @@ import { ContentBlock } from '@fxtrot/edge';
 import { NextSeo } from 'next-seo';
 
 import styles from './styles.module.css';
+
 import Header from './Header';
-import Input from './Input';
+import EmailField from 'pages/signup/EmailField';
 
 const Seo = (
   <NextSeo
@@ -32,17 +33,17 @@ const Index = () => {
   return (
     <>
       <div className={styles.root}>
-        <ContentBlock wide>
+        <ContentBlock>
           <Header />
         </ContentBlock>
-        <ContentBlock wide>
+        <ContentBlock>
           <main className={styles.main}>
             <div className={styles.content}>
               <p className={styles.text}>
                 Your routine can get more <strong>insightful</strong> and your
                 stand ups <strong> efficient</strong>
               </p>
-              <Input />
+              <EmailField />
             </div>
           </main>
         </ContentBlock>

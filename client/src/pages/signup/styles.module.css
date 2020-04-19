@@ -33,3 +33,59 @@
   padding: 0;
   --text-color: var(--gray-600);
 }
+
+.emailField {
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  border-radius: var(--br);
+  width: 100%;
+  & > .input,
+  & > .submitButton {
+    transition: 0.2s ease-in-out;
+    &:hover,
+    &:focus,
+    &:focus-within {
+      z-index: 5;
+    }
+  }
+}
+
+.emailInput {
+  all: unset;
+  padding: 8px 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.submitEmail {
+  border-radius: 0 var(--br) var(--br) 0;
+  margin-left: -1px;
+}
+
+.emailCard {
+  width: 750px;
+  background: #fff;
+}
+
+.emailCardImageBox {
+  position: relative;
+  height: 100%;
+}
+.emailCardImage {
+  height: 100%;
+  margin-bottom: -4px;
+  position: relative;
+  z-index: 2;
+}
+
+.emailCardImageShadow {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  height: calc(100% + 10px);
+  filter: blur(20px);
+}
