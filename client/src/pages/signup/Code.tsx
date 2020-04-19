@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Inline, TextField, Button, Stack } from '@fxtrot/edge';
+import { Inline, TextField, Button, Stack, Text } from '@fxtrot/edge';
 
 import styles from './styles.module.css';
 
@@ -91,6 +91,7 @@ const Code: React.FC = () => {
       onFocus={onFocus}
     >
       <Stack align="center">
+        <Text>Confirm the sign up with the PIN code we sent you:</Text>
         <Inline space="m" nowrap>
           {pin.map((s, i) => {
             return (
@@ -106,7 +107,7 @@ const Code: React.FC = () => {
             );
           })}
         </Inline>
-        <Button type="submit" size="l" tone="accent">
+        <Button type="submit" size="l" tone="brand">
           Submit
         </Button>
       </Stack>

@@ -35,7 +35,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "next": "^9.3.6-canary.1"
+    "next": "^9.3.6-canary.4"
   },
   "workspaces": [
     "client",

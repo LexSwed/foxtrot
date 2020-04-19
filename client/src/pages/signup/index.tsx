@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NextSeo } from 'next-seo';
+import { GetServerSideProps } from 'next';
 import { Cookie } from 'next-cookie';
 
 import styles from './styles.module.css';
-import Code from './Code';
-import { GetServerSideProps } from 'next';
 import EnterCode from './EnterCode';
 import Loading from './Loading';
 
