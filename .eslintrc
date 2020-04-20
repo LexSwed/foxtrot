@@ -38,23 +38,9 @@
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "import/no-unresolved": "off",
-    "simple-import-sort/sort": [
-      "error",
-      {
-        "groups": [
-          // Packages. `react` related packages come first.
-          ["^react", "^@?\\w"],
-          // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          // Other relative imports. Put same-folder imports and `.` last.
-          ["^utils", "^lib", "^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-          // Side effect imports.
-          ["^\\u0000"]
-        ]
-      }
-    ],
-    "sort-imports": "off",
-    "import/order": "off",
+    "import/no-unused-modules": "warn",
+    "import/order": "warn",
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
     "prettier/prettier": "error"
   },
   "overrides": [

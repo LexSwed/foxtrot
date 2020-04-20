@@ -11,6 +11,7 @@
 .card {
   margin: 0 auto;
   width: 500px;
+  background: #fff;
 }
 
 .heading {
@@ -37,10 +38,14 @@
 .emailField {
   background: #fff;
   padding: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--elevation-1);
   display: flex;
   border-radius: var(--br);
   width: 100%;
+  transition: all 0.24s;
+  &:hover {
+    box-shadow: var(--elevation-2);
+  }
   & > .input,
   & > .submitButton {
     transition: 0.2s ease-in-out;
@@ -64,28 +69,10 @@
   margin-left: -1px;
 }
 
-.emailCard {
-  width: 750px;
-  background: #fff;
-}
-
 .emailCardImageBox {
-  position: relative;
   height: 100%;
 }
 .emailCardImage {
   height: 100%;
   margin-bottom: -4px;
-  position: relative;
-  z-index: 2;
-}
-
-.emailCardImageShadow {
-  position: absolute;
-  top: -5px;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
-  height: calc(100% + 10px);
-  filter: blur(20px);
 }

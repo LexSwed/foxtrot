@@ -13,8 +13,8 @@
   "dependencies": {
     "@fxtrot/edge": "^1.0.23",
     "classnames": "^2.2.6",
-    "next-cookie": "^2.2.1",
     "next-seo": "^4.4.0",
+    "nookies": "^2.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },

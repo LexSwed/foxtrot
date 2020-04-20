@@ -1,16 +1,20 @@
 import React, { useEffect, useReducer } from 'react';
-import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
-import { Cookie } from 'next-cookie';
+import { parseCookies } from 'nookies';
+import { NextSeo } from 'next-seo';
+import { Box } from '@fxtrot/edge';
+
+import ConfirmationCard from './ConfirmationCard';
+import EmailCard from './EmailCard';
+import Loading from './Loading';
 
 import styles from './styles.module.css';
-import ConfirmationCard from './ConfirmationCard';
-import Loading from './Loading';
-import EmailCard from './EmailCard';
 
 const Seo = <NextSeo title="Foxtrot - Sign Up" />;
 
-const SignUp: React.FC<{ email: string }> = ({ email }) => {
+type Props = { email: string };
+
+const SignUp: React.FC<Props> = ({ email }) => {
   const [state, dispatch] = useReducer(signupReducer, {
     isLoading: false,
     email
@@ -30,17 +34,21 @@ const SignUp: React.FC<{ email: string }> = ({ email }) => {
   return (
     <>
       <div className={styles.layout}>
-        {state.email ? (
-          state.isLoading ? (
-            <Loading />
+        <Box elevation="1" p="xl" className={styles.card}>
+          {state.email ? (
+            state.isLoading ? (
+              <Loading />
+            ) : (
+              <ConfirmationCard />
+            )
           ) : (
-            <ConfirmationCard />
-          )
-        ) : (
-          <EmailCard
-            onSubmit={(email) => dispatch({ type: 'setEmail', payload: email })}
-          />
-        )}
+            <EmailCard
+              onSubmit={(email) =>
+                dispatch({ type: 'setEmail', payload: email })
+              }
+            />
+          )}
+        </Box>
       </div>
       {Seo}
     </>
@@ -48,8 +56,8 @@ const SignUp: React.FC<{ email: string }> = ({ email }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const props: Record<string, any> = {};
-  const email = new Cookie(ctx as any).get('email');
+  const props: Partial<Props> = {};
+  const { email } = parseCookies(ctx);
 
   if (email) {
     props.email = email;

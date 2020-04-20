@@ -2,10 +2,10 @@ import React from 'react';
 import { ContentBlock } from '@fxtrot/edge';
 import { NextSeo } from 'next-seo';
 
-import styles from './styles.module.css';
-
+import EmailField from '../../signup/EmailField';
 import Header from './Header';
-import EmailField from 'pages/signup/EmailField';
+
+import styles from './styles.module.css';
 
 const Seo = (
   <NextSeo

@@ -1,9 +1,10 @@
 import config from 'config';
 import { GetServerSideProps } from 'next';
-import { Cookie } from 'next-cookie';
+import { parseCookies } from 'nookies';
 
 export function isAuthorized(ctx: Parameters<GetServerSideProps>[0]) {
-  const token = new Cookie(ctx as any).get(config.get('auth.tokenName'));
+  const cookies = parseCookies(ctx);
+  const authKey: string = config.get('auth.tokenName');
 
-  return Boolean(token);
+  return Boolean(cookies[authKey]);
 }

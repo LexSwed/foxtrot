@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Spinner } from '@fxtrot/edge';
+import { Spinner, Stack } from '@fxtrot/edge';
 
 const Loading: React.FC = () => {
   return (

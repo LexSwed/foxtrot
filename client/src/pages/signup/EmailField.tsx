@@ -16,6 +16,7 @@ const EmailField: React.FC<Props> = ({ onSubmit }) => {
       onSubmit(email);
     }
   };
+
   return (
     <form onSubmit={onEmailSubmit} className={styles.emailField}>
       <input
